@@ -30,3 +30,77 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+library(ISLR)
+head(Caravan)
+str(Caravan)
+summary(Caravan$Purchase)
+any(is.na(Caravan))
+
+var(Caravan[,1])
+var(Caravan[,2])
+
+#Need to use standardized variables for the KNN model, creating a dataset without the "Purchase" variable
+scaled_caravan <- scale(Caravan[,-86])
+head(scaled_caravan)
+
+# Purchase variable set
+
+PurchaseOutcome <- Caravan[,86]
+
+# Divide into training and test sets
+test_index <- 1:1000
+test_caravan <- scaled_caravan[test_index,]
+train_caravan <- scaled_caravan[-test_index,]
+
+test_Purchase <- PurchaseOutcome[test_index]
+train_Purchase <- PurchaseOutcome[-test_index]
+
+# Perform KNN learning model on train data
+
+library(class)
+set.seed(101)
+KNN_model <- knn(train_caravan,test_caravan,train_Purchase,k=1)
+
+# Check out some values and get error rate
+
+head(KNN_model,20)
+mean(KNN_model != test_Purchase)
+
+# Now let's work on improving the model by finding ideal k nearest neighbors
+KNN_model <- NULL
+KNN_error <- NULL
+
+for(i in 1:25){
+  set.seed(101)
+  KNN_model <- knn(train_caravan,test_caravan,train_Purchase,k=i)
+  KNN_error[i] <- mean(KNN_model != test_Purchase)
+}
+
+print(KNN_error)
+
+# plot error rates for each i
+library(ggplot2)
+
+k_xparam <- 1:25
+error_rates <- data.frame(k_xparam,KNN_error)
+ggplot(error_rates,aes(k_xparam,KNN_error)) + geom_line() + geom_point()
+
+#Choose ideal K nearest neighbors parameter
+
+error_rates
+
+```
+
+Clearly 9 K Nearest Neighbors is our ideal parameter value that reduces the error rate to only 5.8%.
+
+```{r}
+set.seed(101)
+KNN_model <- knn(train_caravan,test_caravan,train_Purchase,k=9)
+mean(KNN_model != test_Purchase)
+```
+There you go, the model is all set, and I'll be back with more ML fun stuff.
+
+
