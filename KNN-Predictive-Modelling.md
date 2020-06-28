@@ -1,7 +1,6 @@
 ---
 title: "KNN Purchasing Demand Prediction Model"
 author: "Maj"
-date: "6/27/2020"
 output: 
   html_document: 
     keep_md: yes
