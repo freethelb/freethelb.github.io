@@ -1,7 +1,7 @@
 ---
 title: "KNN Purchasing Demand Prediction Model"
 author: "Maj"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+date: "2020-06-28"
 output: 
   html_document: 
     keep_md: yes
