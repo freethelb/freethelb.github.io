@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "KNN Purchasing Demand Prediction Model"
 author: "Maj"
 date: "2020-06-28"

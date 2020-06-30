@@ -2,4 +2,5 @@ docs_list_title: ACME Documentation
 docs:
 
 - title: KNN Mods
-  url: KNN-Predictive-Modelling.html
+  url: 2020-06-29-KNN-Predictive-Modelling.md
+  
