@@ -4,6 +4,11 @@ plugins:
 relative_links:
   enabled: true
   collections: true
+# Aux links for the upper right navigation
+aux_links:
+  "Back to HomePage":
+    - "https://freethelb.github.io"
+
 include:
   - CONTRIBUTING.md
   - README.md
