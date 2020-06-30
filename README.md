@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 ## About This Work-In-Progress
 
 You can use the [editor on GitHub](https://github.com/freethelb/freethelb.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
