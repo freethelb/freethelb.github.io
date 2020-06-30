@@ -9,7 +9,6 @@ include:
   - README.md
   - _data
   - _posts
-  - navigation.html
   - LICENSE.md
   - COPYING.md
   - CODE_OF_CONDUCT.md
