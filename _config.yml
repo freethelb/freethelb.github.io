@@ -8,6 +8,7 @@ include:
   - CONTRIBUTING.md
   - README.md
   - _data
+  - _posts
   - navigation.html
   - LICENSE.md
   - COPYING.md
