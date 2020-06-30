@@ -7,8 +7,6 @@ relative_links:
 include:
   - CONTRIBUTING.md
   - README.md
-  - _data
-  - _posts
   - LICENSE.md
   - COPYING.md
   - CODE_OF_CONDUCT.md
